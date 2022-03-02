@@ -20,7 +20,7 @@ public class Main {
     {
         if(b<=0)
         {
-            return a+"s" ;
+            return "s" ;
         }
 
         return  a ;
