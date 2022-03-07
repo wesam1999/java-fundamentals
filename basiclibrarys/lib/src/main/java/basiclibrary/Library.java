@@ -77,7 +77,7 @@ public class Library {
 
     }
 
-    public  void tally(String votes<>) {
+    public static String tally(List<String> votes) {
         // Insert all votes in a hashmap
         Map<String, Integer> map =
                 new HashMap<String, Integer>();
@@ -106,28 +106,37 @@ public class Library {
                     winner.compareTo(key) > 0)
                 winner = key;
         }
-        System.out.println(winner);
 
+
+        return winner;
     }
 
-    public static void getMaxValue(int[] numbers) {
-        int maxValue = numbers[0];
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i] > maxValue) {
-                maxValue = numbers[i];
+    public static void getMaxValue(int[][] numbers) {
+
+        int maxValue = numbers[0][0];
+        int minValue = numbers[0][0];
+
+
+        for (int i = 0; i <numbers.length ; i++) {
+            for (int j = 0; j <numbers[i].length ; j++) {
+
+                if(numbers[i][j]>maxValue)  {
+
+                    maxValue=numbers[i][j];
+                }
+                if(numbers[i][j]<minValue){
+                    minValue=numbers[i][j];
+
+
+                }
+
+
             }
-            System.out.println("High:" + maxValue);
 
         }
-        int minValue = numbers[0];
-        for (int j = 1; j < numbers.length; j++) {
-            if (numbers[j] < minValue) {
-                minValue = numbers[j];
-            }
-        }
+        System.out.println("High:" + maxValue);
         System.out.println("Low: " + minValue);
-        
-
+        System.out.println("Never saw temperature:");
 
     }
 
